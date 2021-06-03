@@ -1,0 +1,11 @@
+{
+  "name": "orderbook",
+  "displayName": "orderbook",
+  "expo": {
+    "name": "orderbook",
+    "slug": "orderbook",
+    "version": "1.0.0",
+    "platforms": ["ios", "android", "web"],
+    "assetBundlePatterns": ["**/*"]
+  }
+}
