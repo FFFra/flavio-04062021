@@ -3,6 +3,8 @@ const INITIAL_STATE = {
   bids: [],
 };
 
+const MAX_ORDERS_LIMIT = 15;
+
 const orderbookReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'STORE_ORDERBOOK': {
@@ -10,8 +12,8 @@ const orderbookReducer = (state = INITIAL_STATE, action) => {
       if (bid && ask) {
         return {
           ...state,
-          bids: [...state.bids, bid && bid],
-          asks: [...state.asks, ask && ask],
+          bids: [...state.bids.slice(0, MAX_ORDERS_LIMIT), bid && bid],
+          asks: [...state.asks.slice(0, MAX_ORDERS_LIMIT), ask && ask],
         };
       }
     }
