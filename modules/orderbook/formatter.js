@@ -1,6 +1,6 @@
 import { forEach } from 'lodash';
 
-import { calculateDepth } from '../../utils/Helpers';
+import { calculateTotal, calculateDepth } from '../../utils/Helpers';
 
 const formatOrders = (orders) => {
   let formattedOrder;
@@ -10,7 +10,7 @@ const formatOrders = (orders) => {
     forEach(orders, (order) => {
       if (orders && order[1]) {
         sizes.push(order[1]);
-        const depth = calculateDepth(sizes);
+        const depth = calculateTotal(sizes);
 
         formattedOrder = {
           price: order[0],
