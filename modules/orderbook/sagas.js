@@ -1,9 +1,11 @@
-import { call, takeLatest, take, put } from 'redux-saga/effects';
+import { call, takeLatest, take, put, delay } from 'redux-saga/effects';
 import { eventChannel } from 'redux-saga';
 
 import { formatOrderbook } from './formatter';
 
 import { storeOrderbook } from './actions';
+
+import { calculateDepth } from '../../utils/Helpers';
 
 function connectWebSocket() {
   const url = 'wss://www.cryptofacilities.com/ws/v1';
@@ -43,6 +45,7 @@ const createSocketChannel = (socket, asset) => {
 const closeSocket = (socket) => {
   const unsubscribe = () => {
     socket.onclose = () => {
+      socket.close();
       console.log('socket closed');
     };
   };
@@ -57,6 +60,7 @@ function* initOrderbookSaga(asset) {
 
     while (true) {
       const payload = yield take(channel);
+      yield delay(500);
 
       const data = JSON.parse(payload.data);
 
