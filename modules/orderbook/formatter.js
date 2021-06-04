@@ -1,5 +1,7 @@
 import { forEach } from 'lodash';
 
+import { calculateDepth } from '../../utils/Helpers';
+
 const formatOrders = (orders) => {
   let formattedOrder;
   let sizes = [];
@@ -19,13 +21,7 @@ const formatOrders = (orders) => {
     });
   }
 
-  return formattedOrder;
-};
-
-const calculateDepth = (sizes) => {
-  const depthCalc = sizes.map((_, index) => sizes.slice(0, index + 1).reduce((a, b) => a + b));
-
-  return depthCalc;
+  if (formattedOrder) return formattedOrder;
 };
 
 export const formatOrderbook = (data) => {
@@ -33,6 +29,7 @@ export const formatOrderbook = (data) => {
   const { bids, asks } = data;
 
   const formattedBid = formatOrders(bids);
+
   const formattedAsk = formatOrders(asks);
 
   return { bid: formattedBid && formattedBid, ask: formattedAsk };
