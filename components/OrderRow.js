@@ -18,6 +18,9 @@ const OrderRow = ({ containerStyle, price, size, total, priceStyle }) => {
 
 OrderRow.propTypes = {
   containerStyle: ViewPropTypes.style,
+  price: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  price: ViewPropTypes.style,
 };
 
 const styles = StyleSheet.create({

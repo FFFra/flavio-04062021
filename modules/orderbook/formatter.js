@@ -1,6 +1,6 @@
 import { forEach } from 'lodash';
 
-import { calculateTotal, calculateDepth } from '../../utils/Helpers';
+import { calculateTotal } from '../../utils/Helpers';
 
 const formatOrders = (orders) => {
   let formattedOrder;

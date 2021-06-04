@@ -2,10 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet, FlatList, ViewPropTypes } from 'react-native';
 
-import { sortBy } from 'lodash';
-
-import OrderRow from './OrderRow';
-
 import { generateKey } from '../utils/Helpers';
 
 const Component = ({ containerStyle, data, renderItem }) => {
@@ -24,6 +20,8 @@ const Component = ({ containerStyle, data, renderItem }) => {
 
 Component.propTypes = {
   containerStyle: ViewPropTypes.style,
+  data: PropTypes.array.isRequired,
+  renderItem: PropTypes.func.isRequired,
 };
 
 const styles = StyleSheet.create({

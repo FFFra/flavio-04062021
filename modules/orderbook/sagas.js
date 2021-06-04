@@ -5,8 +5,6 @@ import { formatOrderbook } from './formatter';
 
 import { storeOrderbook } from './actions';
 
-import { calculateDepth } from '../../utils/Helpers';
-
 function connectWebSocket() {
   const url = 'wss://www.cryptofacilities.com/ws/v1';
 
@@ -40,16 +38,6 @@ const createSocketChannel = (socket, asset) => {
     };
     return unsubscribe;
   });
-};
-
-const closeSocket = (socket) => {
-  const unsubscribe = () => {
-    socket.onclose = () => {
-      socket.close();
-      console.log('socket closed');
-    };
-  };
-  return unsubscribe;
 };
 
 function* initOrderbookSaga(asset) {
