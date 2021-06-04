@@ -18,14 +18,16 @@ run ´react-native run-ios´
 
 ## Features to be implemented
 
-– Toggle feed button
-– Grouping select box 
+* Toggle feed button
+* Grouping select box 
 
 ## To be improved
-– redux state could have a better design
-– move logic to formatter
-– a more straight forward way to handle the orderbook snapshots
-– implement unit-tests
+
+In general, a better understanding of how orderbooks works and a more straightforward way to handle the multidimensional arrays could lead to faster development.
+   . 
+* The ´formatOrders´ formatter could also handle the calcs to display the depth percentage.
+* By handling better the data, my redux store could have an easy going design. 
+* Implement unit-tests 
 
 
 ## The layout should look like this
