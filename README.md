@@ -2,7 +2,7 @@
 
 This a simple POC of a BTC orderbook for React Native iOS.
 
-This project was made using redux, redux-saga and reselect to consume a websocket API. The main purposal is to handle better the websocket channel, and allow Redux to store the minimal possible state
+This project was made using redux, redux-saga and reselect to consume a websocket API. The main purposal is to handle better the websocket channel, and allow Redux to store the minimal possible state.
 
 ## Installing
 
@@ -14,10 +14,18 @@ You can run the iOS version by doing:
 
 move to ios folder and run `pod install`
 
+run ´react-native run-ios´
+
 ## Features to be implemented
 
 – Toggle feed button
 – Grouping select box 
+
+## To be improved
+– redux state could have a better design
+– move logic to formatter
+– a more straight forward way to handle the orderbook snapshots
+– implement unit-tests
 
 
 ## The layout should look like this
